@@ -1,0 +1,65 @@
+@use '../mixins/pseudo.scss' as *;
+
+.mobile{
+    position: relative;
+    top: 64px;
+    width: 247px;
+    height: 505px;
+    margin-inline: auto;
+    border: 11px solid white;
+    border-radius: 30px;
+    background-color: var(--mobile-background);
+
+    &__header{
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        height: 66px;
+        padding-inline: 16px;
+        background-image: var(--gradient);
+        border-radius: 20px 20px 6px 6px;
+
+        &::after{
+            @include pseudo(129px, 25px);
+            background-color: #fff;
+            top: -11px;
+            left: 50%;
+            translate: -50%;
+            border-radius: 0 0 14px 14px;
+        
+
+        }
+    }
+
+    &__messages{
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+        gap: 8px;
+    }
+
+    &__message{
+        width: fit-content;
+        width: 60%;
+        margin-block: 0;
+        padding: 6px 9px;
+        border-radius: 10px 10px 10px 4px;
+        color: var(--message-color);
+        background-color: var(--message-background);
+        font-size: 0.5rem;
+
+        &-container{
+            display: flex;
+            gap: 0.5rem;
+            & > *{
+                width: 40px;
+                border-radius: 10px;
+            }
+        }
+
+        &--right{
+            margin-left: auto;
+            background-color: white;
+        }
+    }
+}
